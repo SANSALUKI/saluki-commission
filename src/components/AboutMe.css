@@ -1,0 +1,401 @@
+/* AboutMe Styles - Enhanced Responsive Layout */
+.aboutme-container {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #f5f5f0 0%, #e8e8e0 100%);
+  padding: 0;
+  font-family: 'Arial', sans-serif;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.aboutme-content-wrapper {
+  width: 100%;
+  max-width: 850px;
+  padding: 40px 20px;
+  box-sizing: border-box;
+}
+
+/* Header */
+.aboutme-header {
+  text-align: center;
+  margin-bottom: 35px;
+}
+
+.aboutme-title {
+  font-size: clamp(2rem, 5vw, 2.8rem);
+  font-weight: 900;
+  color: #1a1a1a;
+  margin: 0 0 10px;
+  line-height: 1.2;
+}
+
+.aboutme-description {
+  font-size: clamp(0.9rem, 2vw, 1rem);
+  color: #666;
+  margin: 0;
+  line-height: 1.4;
+}
+
+/* Content */
+.aboutme-content {
+  margin-bottom: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Intro Card - Special styling */
+.intro-card {
+  background: linear-gradient(135deg, #ffd700 0%, #ffc700 100%);
+  text-align: left;
+}
+
+.intro-title {
+  font-size: clamp(1.2rem, 2.8vw, 1.4rem);
+  font-weight: 800;
+  color: #1a1a1a;
+  margin: 0 0 20px;
+  text-align: left;
+  line-height: 1.3;
+}
+
+.intro-card p {
+  font-size: clamp(0.9rem, 2vw, 0.98rem);
+  line-height: 1.8;
+  color: #333;
+  margin: 0 0 14px;
+}
+
+.intro-card p:last-child {
+  margin-bottom: 0;
+}
+
+.aboutme-card {
+  background: white;
+  border-radius: 24px;
+  padding: 40px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-sizing: border-box;
+}
+
+.aboutme-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 50px rgba(0, 0, 0, 0.15);
+}
+
+/* Sections */
+.aboutme-section {
+  margin-bottom: 32px;
+}
+
+.aboutme-section:last-child {
+  margin-bottom: 0;
+}
+
+.aboutme-section h3 {
+  font-size: clamp(1.15rem, 2.5vw, 1.3rem);
+  font-weight: 700;
+  color: #1a1a1a;
+  margin: 0 0 16px;
+  padding-bottom: 10px;
+  border-bottom: 3px solid #ffd700;
+  display: inline-block;
+  line-height: 1.3;
+}
+
+.aboutme-section p {
+  font-size: clamp(0.9rem, 2vw, 0.98rem);
+  line-height: 1.8;
+  color: #444;
+  margin: 0 0 16px;
+}
+
+.aboutme-section p:last-child {
+  margin-bottom: 0;
+}
+
+/* Skills */
+.aboutme-skills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 16px;
+}
+
+.skill-tag {
+  background: #1a1a1a;
+  color: #ffd700;
+  padding: 10px 18px;
+  border-radius: 25px;
+  font-size: clamp(0.8rem, 1.8vw, 0.9rem);
+  font-weight: 600;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  display: inline-block;
+  white-space: nowrap;
+  cursor: default;
+}
+
+.skill-tag:hover {
+  transform: scale(1.08) translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* List */
+.aboutme-list {
+  list-style: none;
+  padding: 0;
+  margin: 16px 0 0;
+}
+
+.aboutme-list li {
+  font-size: clamp(0.9rem, 2vw, 0.98rem);
+  line-height: 1.8;
+  color: #444;
+  padding: 10px 0 10px 28px;
+  position: relative;
+  margin: 0;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.aboutme-list li:last-child {
+  border-bottom: none;
+}
+
+.aboutme-list li::before {
+  content: '✓';
+  position: absolute;
+  left: 0;
+  color: #10b981;
+  font-weight: bold;
+  font-size: 1.1em;
+}
+
+/* Back Button */
+.back-btn-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 35px;
+}
+
+.back-btn {
+  padding: 14px 32px;
+  font-size: clamp(0.9rem, 2vw, 1rem);
+  font-weight: 700;
+  border: 3px solid #1a1a1a;
+  border-radius: 50px;
+  background: #ffd700;
+  color: #1a1a1a;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  box-sizing: border-box;
+}
+
+.back-btn:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.25);
+  background: #1a1a1a;
+  color: #ffd700;
+}
+
+.back-btn:active {
+  transform: translateY(-2px);
+}
+
+/* Responsive Breakpoints */
+
+/* Large Tablets and Desktops (768px - 1024px) */
+@media (min-width: 768px) and (max-width: 1024px) {
+  .aboutme-content-wrapper {
+    max-width: 750px;
+    padding: 45px 25px;
+  }
+  
+  .aboutme-card {
+    padding: 36px;
+  }
+}
+
+/* Tablets (600px - 767px) */
+@media (max-width: 767px) {
+  .aboutme-content-wrapper {
+    padding: 30px 20px;
+  }
+  
+  .aboutme-header {
+    margin-bottom: 28px;
+  }
+  
+  .aboutme-card {
+    padding: 30px;
+    border-radius: 20px;
+  }
+  
+  .aboutme-section {
+    margin-bottom: 28px;
+  }
+  
+  .aboutme-section h3 {
+    margin-bottom: 14px;
+    padding-bottom: 8px;
+  }
+  
+  .aboutme-skills {
+    gap: 8px;
+  }
+  
+  .skill-tag {
+    padding: 8px 16px;
+  }
+}
+
+/* Mobile Landscape (481px - 599px) */
+@media (max-width: 599px) {
+  .aboutme-content-wrapper {
+    padding: 25px 18px;
+  }
+  
+  .aboutme-card {
+    padding: 26px;
+  }
+}
+
+/* Mobile (320px - 480px) */
+@media (max-width: 480px) {
+  .aboutme-content-wrapper {
+    padding: 20px 15px;
+  }
+  
+  .aboutme-header {
+    margin-bottom: 25px;
+  }
+  
+  .aboutme-card {
+    padding: 22px;
+    border-radius: 18px;
+  }
+  
+  .aboutme-section {
+    margin-bottom: 24px;
+  }
+  
+  .aboutme-section h3 {
+    margin-bottom: 12px;
+    padding-bottom: 6px;
+    border-bottom-width: 2.5px;
+  }
+  
+  .aboutme-section p {
+    margin-bottom: 14px;
+  }
+  
+  .aboutme-skills {
+    gap: 8px;
+  }
+  
+  .skill-tag {
+    padding: 7px 14px;
+  }
+  
+  .aboutme-list li {
+    padding: 8px 0 8px 24px;
+  }
+  
+  .back-btn-container {
+    margin-top: 30px;
+  }
+  
+  .back-btn {
+    width: 100%;
+    max-width: 300px;
+    justify-content: center;
+    padding: 12px 28px;
+  }
+}
+
+/* Small Mobile (up to 360px) */
+@media (max-width: 360px) {
+  .aboutme-content-wrapper {
+    padding: 18px 12px;
+  }
+  
+  .aboutme-card {
+    padding: 18px;
+    border-radius: 16px;
+  }
+  
+  .aboutme-section {
+    margin-bottom: 22px;
+  }
+  
+  .aboutme-skills {
+    gap: 6px;
+  }
+  
+  .skill-tag {
+    padding: 6px 12px;
+  }
+  
+  .aboutme-list li {
+    padding: 7px 0 7px 22px;
+  }
+  
+  .back-btn {
+    max-width: 100%;
+  }
+}
+
+/* Extra Small Mobile (up to 320px) */
+@media (max-width: 320px) {
+  .aboutme-card {
+    padding: 16px;
+  }
+  
+  .aboutme-section h3 {
+    padding-bottom: 5px;
+  }
+}
+
+/* Landscape Orientation */
+@media (max-height: 600px) and (orientation: landscape) {
+  .aboutme-container {
+    min-height: auto;
+  }
+  
+  .aboutme-content-wrapper {
+    padding: 30px 20px;
+  }
+  
+  .aboutme-header {
+    margin-bottom: 20px;
+  }
+  
+  .aboutme-card {
+    padding: 25px;
+  }
+  
+  .aboutme-section {
+    margin-bottom: 20px;
+  }
+  
+  .back-btn-container {
+    margin-top: 25px;
+  }
+}
+
+/* Print Styles */
+@media print {
+  .back-btn-container {
+    display: none;
+  }
+  
+  .aboutme-card {
+    box-shadow: none;
+    border: 1px solid #ddd;
+  }
+}

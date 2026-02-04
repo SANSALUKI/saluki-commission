@@ -1,54 +1,68 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { LanguageContext } from '../App';
+import { translations } from '../translations';
+import LanguageSwitcher from './LanguageSwitcher';
+import Footer from './Footer';
 import './Header.css';
 
 function Header() {
   const navigate = useNavigate();
+  const { language } = useContext(LanguageContext);
+  const t = translations.header;
 
   return (
-    <div className="header-container">
-      <div className="profile-section">
-        <div className="profile-image">
-          <img src="/assets/images/profile.jpg" alt="Saluki Profile" />
+    <div className="header-wrapper">
+      <div className="header-container">
+        <LanguageSwitcher />
+        
+        <div className="header-content">
+          <div className="profile-section">
+            <div className="profile-image-wrapper">
+              <div className="profile-image">
+                <img src="/assets/images/profile.jpg" alt="Saluki Profile" />
+              </div>
+              <div className="profile-border-animation"></div>
+            </div>
+            
+            <div className="title-container">
+              <h1 className="title">{t.title[language]}</h1>
+              <p className="subtitle">{t.subtitle[language]}</p>
+              <p className="service-type">{t.serviceType[language]}</p>
+            </div>
+          </div>
+
+          <div className="social-icons">
+            <a href="https://x.com/zegl1ns" target="_blank" rel="noopener noreferrer" className="social-btn twitter" aria-label="Twitter">
+              <span>𝕏</span>
+            </a>
+            <a href="https://wa.me/+6288299815078" target="_blank" rel="noopener noreferrer" className="social-btn whatsapp" aria-label="WhatsApp">
+              <span>💬</span>
+            </a>
+          </div>
+
+          <nav className="navigation-buttons">
+            <button className="nav-btn primary" onClick={() => navigate('/about')}>
+              {t.buttons.about[language]}
+            </button>
+            <button className="nav-btn" onClick={() => navigate('/portfolio')}>
+              {t.buttons.portfolio[language]}
+            </button>
+            <button className="nav-btn" onClick={() => navigate('/pricelist')}>
+              {t.buttons.pricelist[language]}
+            </button>
+            <button className="nav-btn" onClick={() => navigate('/terms')}>
+              {t.buttons.terms[language]}
+            </button>
+          </nav>
+
+          {/* Scroll Indicator */}
+          <div className="scroll-indicator">
+            <div className="scroll-arrow"></div>
+          </div>
         </div>
-        <h1 className="title">Saluki Commission</h1>
-        <p className="subtitle">Open for commission & collaboration ✨</p>
-        <p className="service-type">Fanart / Illustration / Design</p>
       </div>
-
-      <div className="social-icons">
-        <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="social-btn twitter">
-          <i className="fab fa-twitter">𝕏</i>
-        </a>
-        <a href="https://wa.me" target="_blank" rel="noopener noreferrer" className="social-btn whatsapp">
-          <i className="fab fa-whatsapp">WhatsApp</i>
-        </a>
-      </div>
-
-      <div className="navigation-buttons">
-        <button className="nav-btn primary" onClick={() => navigate('/about')}>
-          ABOUT ME →
-        </button>
-        <button className="nav-btn" onClick={() => navigate('/portfolio')}>
-          PORTOFOLIO →
-        </button>
-        <button className="nav-btn" onClick={() => navigate('/pricelist')}>
-          PRICE LIST →
-        </button>
-        <button className="nav-btn" onClick={() => navigate('/terms')}>
-          TERMS & CONDITIONS →
-        </button>
-      </div>
-
-      <div className="about-section">
-        <div className="about-card">
-          <h3>The creator behind Saluki Commission 👋</h3>
-          <p>I'm a freelance creative open for commissions and collaborations.</p>
-          <p>I focus on delivering clean, aesthetic, and thoughtful work based on each client's needs.</p>
-          <p>Every project is handled personally, with clear communication and attention to detail.</p>
-          <p>Feel free to reach out if you'd like to work together!</p>
-        </div>
-      </div>
+      <Footer />
     </div>
   );
 }
