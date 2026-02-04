@@ -45,8 +45,8 @@ function Header() {
             <button className="nav-btn primary" onClick={() => navigate('/about')}>
               {t.buttons.about[language]}
             </button>
-            <button className="nav-btn" onClick={() => navigate('/portfolio')}>
-              {t.buttons.portfolio[language]}
+            <button className="nav-btn" onClick={() => navigate('/portofolio')}>
+              {t.buttons.portofolio[language]}
             </button>
             <button className="nav-btn" onClick={() => navigate('/pricelist')}>
               {t.buttons.pricelist[language]}
@@ -66,5 +66,6 @@ function Header() {
     </div>
   );
 }
+
 
 export default Header;
