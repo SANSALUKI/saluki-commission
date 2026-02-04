@@ -1,4 +1,4 @@
-/* Header Styles - Enhanced with Animations */
+/* Header Styles - Enhanced with Animations and Dark Mode Support */
 .header-wrapper {
   min-height: 100vh;
   display: flex;
@@ -7,7 +7,7 @@
 
 .header-container {
   flex: 1;
-  background: linear-gradient(135deg, #f5f5f0 0%, #e8e8e0 100%);
+  background: linear-gradient(135deg, var(--color-bg-gradient-1) 0%, var(--color-bg-gradient-2) 100%);
   padding: 0;
   font-family: 'Arial', sans-serif;
   display: flex;
@@ -15,6 +15,7 @@
   justify-content: center;
   box-sizing: border-box;
   position: relative;
+  transition: background var(--transition-base);
 }
 
 .header-content {
@@ -46,13 +47,14 @@
   width: 160px;
   height: 160px;
   border-radius: 50%;
-  border: 4px solid #1a1a1a;
+  border: 4px solid var(--color-dark);
   overflow: hidden;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 10px 30px var(--color-card-shadow);
   flex-shrink: 0;
   position: relative;
   z-index: 2;
   animation: fadeInScale 0.8s ease-out;
+  transition: border-color var(--transition-base);
 }
 
 .profile-image img {
@@ -70,11 +72,15 @@
   right: -8px;
   bottom: -8px;
   border-radius: 50%;
-  background: linear-gradient(45deg, #ffd700, #1a1a1a, #ffd700);
+  background: linear-gradient(45deg, #ffd700, var(--color-dark), #ffd700);
   background-size: 400% 400%;
   animation: gradientRotate 3s ease infinite;
   z-index: 1;
   opacity: 0.6;
+}
+
+[data-theme="dark"] .profile-border-animation {
+  background: linear-gradient(45deg, #10b981, var(--color-dark), #10b981);
 }
 
 @keyframes gradientRotate {
@@ -122,22 +128,25 @@
   font-size: clamp(1.8rem, 5vw, 2.5rem);
   font-weight: 900;
   margin: 0 0 10px;
-  color: #1a1a1a;
+  color: var(--color-dark);
   line-height: 1.2;
+  transition: color var(--transition-base);
 }
 
 .subtitle {
   font-size: clamp(0.95rem, 2.5vw, 1.1rem);
-  color: #555;
+  color: var(--color-text);
   margin: 0 0 6px;
   line-height: 1.4;
+  transition: color var(--transition-base);
 }
 
 .service-type {
   font-size: clamp(0.85rem, 2vw, 0.95rem);
-  color: #888;
+  color: var(--color-text-light);
   margin: 0;
   line-height: 1.4;
+  transition: color var(--transition-base);
 }
 
 /* Social Icons */
@@ -200,9 +209,17 @@
   color: #333; 
 }
 
+[data-theme="dark"] .twitter {
+  background-color: #8b7dc8;
+}
+
 .whatsapp { 
   background-color: #7dd3c0; 
   color: #fff; 
+}
+
+[data-theme="dark"] .whatsapp {
+  background-color: #5ab59f;
 }
 
 /* Navigation Buttons */
@@ -221,9 +238,10 @@
   padding: 16px 30px;
   font-size: clamp(0.9rem, 2.2vw, 1rem);
   font-weight: 700;
-  border: 3px solid #1a1a1a;
+  border: 3px solid var(--color-dark);
   border-radius: 50px;
-  background: white;
+  background: var(--color-card-bg);
+  color: var(--color-dark);
   cursor: pointer;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   text-align: center;
@@ -243,8 +261,12 @@
   left: -100%;
   width: 100%;
   height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+  background: linear-gradient(90deg, transparent, rgba(255, 215, 0, 0.3), transparent);
   transition: left 0.5s;
+}
+
+[data-theme="dark"] .nav-btn::before {
+  background: linear-gradient(90deg, transparent, rgba(16, 185, 129, 0.3), transparent);
 }
 
 .nav-btn:hover::before {
@@ -253,18 +275,29 @@
 
 .nav-btn.primary {
   background: #ffd700;
-  border-color: #1a1a1a;
+  border-color: var(--color-dark);
   color: #1a1a1a;
+}
+
+[data-theme="dark"] .nav-btn.primary {
+  background: #10b981;
+  border-color: #10b981;
+  color: white;
 }
 
 .nav-btn:hover {
   transform: translateY(-4px);
-  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 8px 30px var(--color-card-shadow);
 }
 
 .nav-btn.primary:hover {
-  background: #1a1a1a;
+  background: var(--color-dark);
   color: #ffd700;
+}
+
+[data-theme="dark"] .nav-btn.primary:hover {
+  background: #059669;
+  color: white;
 }
 
 .nav-btn:active {
@@ -292,10 +325,11 @@
 .scroll-arrow {
   width: 30px;
   height: 30px;
-  border-left: 3px solid #1a1a1a;
-  border-bottom: 3px solid #1a1a1a;
+  border-left: 3px solid var(--color-dark);
+  border-bottom: 3px solid var(--color-dark);
   transform: rotate(-45deg);
   animation: scrollBounce 2s ease-in-out infinite;
+  transition: border-color var(--transition-base);
 }
 
 @keyframes scrollBounce {

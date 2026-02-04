@@ -20,9 +20,9 @@ export const translations = {
         id: 'TENTANG SAYA →',
         en: 'ABOUT ME →'
       },
-      portfolio: {
+      portofolio: {
         id: 'PORTOFOLIO →',
-        en: 'PORTFOLIO →'
+        en: 'PORTOFOLIO →'
       },
       pricelist: {
         id: 'DAFTAR HARGA →',
@@ -133,11 +133,11 @@ export const translations = {
     }
   },
 
-  // PORTFOLIO PAGE
-  portfolio: {
+  // PORTOFOLIO PAGE
+  portofolio: {
     title: {
       id: 'Portofolio',
-      en: 'Portfolio'
+      en: 'Portofolio'
     },
     description: {
       id: 'Jelajahi karya dan proyek kreatif terbaru saya',
@@ -368,7 +368,7 @@ export const translations = {
           'I retain the copyright to all commissioned artwork',
           'Personal use is included in the commission price',
           'Commercial use requires separate licensing (additional fee)',
-          'I reserve the right to post the artwork in my portfolio',
+          'I reserve the right to post the artwork in my portofolio',
           'You may post the artwork with proper credit to me',
           'Artwork may not be used for NFTs, AI training, or resale',
           'Watermark will be removed on final file after full payment'

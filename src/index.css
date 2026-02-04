@@ -9,15 +9,21 @@
   box-sizing: border-box;
 }
 
-/* Root Variables */
+/* Root Variables - Light Theme */
 :root {
-  /* Colors */
+  /* Colors - Light Theme */
   --color-primary: #ffd700;
   --color-dark: #1a1a1a;
   --color-light: #f5f5f0;
   --color-text: #333;
   --color-text-light: #666;
   --color-border: #e0e0e0;
+  --color-bg-gradient-1: #f5f5f0;
+  --color-bg-gradient-2: #e8e8e0;
+  --color-card-bg: #ffffff;
+  --color-card-shadow: rgba(0, 0, 0, 0.1);
+  --color-footer-bg-1: #1a1a1a;
+  --color-footer-bg-2: #2d2d2d;
   
   /* Spacing */
   --spacing-xs: 0.25rem;
@@ -46,6 +52,22 @@
   --transition-slow: 500ms ease;
 }
 
+/* Dark Theme Variables */
+[data-theme="dark"] {
+  --color-primary: #ffd700;
+  --color-dark: #ffffff;
+  --color-light: #1a1a1a;
+  --color-text: #e0e0e0;
+  --color-text-light: #b0b0b0;
+  --color-border: #404040;
+  --color-bg-gradient-1: #1a1a1a;
+  --color-bg-gradient-2: #2d2d2d;
+  --color-card-bg: #2d2d2d;
+  --color-card-shadow: rgba(0, 0, 0, 0.3);
+  --color-footer-bg-1: #0d0d0d;
+  --color-footer-bg-2: #1a1a1a;
+}
+
 /* HTML & Body */
 html {
   font-size: 16px;
@@ -67,6 +89,7 @@ body {
   background-color: var(--color-light);
   min-height: 100vh;
   overflow-x: hidden;
+  transition: background-color var(--transition-base), color var(--transition-base);
 }
 
 /* Typography */
@@ -74,6 +97,7 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: 700;
   line-height: 1.2;
   color: var(--color-dark);
+  transition: color var(--transition-base);
 }
 
 p {
@@ -127,7 +151,7 @@ img {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
-  background-color: #f5f5f5;
+  background-color: var(--color-border);
   padding: 0.2em 0.4em;
   border-radius: 3px;
   font-size: 0.9em;
@@ -186,16 +210,16 @@ select:focus {
 }
 
 ::-webkit-scrollbar-track {
-  background: #f1f1f1;
+  background: var(--color-border);
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #888;
+  background: var(--color-text-light);
   border-radius: 5px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #555;
+  background: var(--color-text);
 }
 
 /* Loading Animation */

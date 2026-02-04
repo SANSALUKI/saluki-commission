@@ -4,15 +4,15 @@ import { LanguageContext } from '../App';
 import { translations } from '../translations';
 import LanguageSwitcher from './LanguageSwitcher';
 import Footer from './Footer';
-import './Portfolio.css';
+import './Portofolio.css';
 
-function Portfolio() {
+function Portofolio() {
   const navigate = useNavigate();
   const { language } = useContext(LanguageContext);
-  const t = translations.portfolio;
+  const t = translations.portofolio;
   const [selectedImage, setSelectedImage] = useState(null);
 
-  const portfolioItems = [
+  const portofolioItems = [
     { id: 1, image: '/assets/images/work1.jpg', alt: 'FA Gokurakugai 極楽街' },
     { id: 2, image: '/assets/images/work2.jpg', alt: 'FA LifeMakeOver' },
     { id: 3, image: '/assets/images/work3.jpg', alt: 'FA GACHIAKUTA' },
@@ -45,26 +45,26 @@ function Portfolio() {
 
   return (
     <div className="page-wrapper">
-      <div className="portfolio-container">
+      <div className="portofolio-container">
         <LanguageSwitcher />
         
-        <div className="portfolio-content-wrapper">
-          <header className="portfolio-header">
-            <h1 className="portfolio-title">{t.title[language]}</h1>
-            <p className="portfolio-description">{t.description[language]}</p>
+        <div className="portofolio-content-wrapper">
+          <header className="portofolio-header">
+            <h1 className="portofolio-title">{t.title[language]}</h1>
+            <p className="portofolio-description">{t.description[language]}</p>
           </header>
 
-          <div className="portfolio-grid">
-            {portfolioItems.map(item => (
-              <article key={item.id} className="portfolio-card">
-                <div className="portfolio-image-container">
+          <div className="portofolio-grid">
+            {portofolioItems.map(item => (
+              <article key={item.id} className="portofolio-card">
+                <div className="portofolio-image-container">
                   <img 
                     src={item.image} 
                     alt={item.alt}
-                    className="portfolio-image"
+                    className="portofolio-image"
                     loading="lazy"
                   />
-                  <div className="portfolio-overlay">
+                  <div className="portofolio-overlay">
                     <button 
                       className="view-details-btn"
                       onClick={() => handleImageClick(item)}
@@ -108,4 +108,4 @@ function Portfolio() {
 }
 
 
-export default Portfolio;
+export default Portofolio;

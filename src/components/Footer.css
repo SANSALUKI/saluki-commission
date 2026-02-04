@@ -1,10 +1,11 @@
-/* Footer Styles */
+/* Footer Styles with Dark Mode Support */
 .footer {
-  background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+  background: linear-gradient(135deg, var(--color-footer-bg-1) 0%, var(--color-footer-bg-2) 100%);
   color: white;
   padding: 40px 20px 20px;
   margin-top: auto;
   box-sizing: border-box;
+  transition: background var(--transition-base);
 }
 
 .footer-content {
