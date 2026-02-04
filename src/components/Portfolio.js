@@ -13,15 +13,15 @@ function Portfolio() {
   const [selectedImage, setSelectedImage] = useState(null);
 
   const portfolioItems = [
-    { id: 1, image: '/assets/images/work1.jpg', alt: '東卍FA Gokurakugai 極楽街' },
-    { id: 2, image: '/assets/images/work2.jpg', alt: '東卍FA LifeMakeOver' },
-    { id: 3, image: '/assets/images/work3.jpg', alt: '東卍FA GACHIAKUTA' },
-    { id: 4, image: '/assets/images/work4.jpg', alt: '東卍FA 終末のワルキューレ RecordofRagnarok' },
-    { id: 5, image: '/assets/images/work5.jpg', alt: '東卍FA enjin GACHIAKUTA ガチアクタ' },
+    { id: 1, image: '/assets/images/work1.jpg', alt: 'FA Gokurakugai 極楽街' },
+    { id: 2, image: '/assets/images/work2.jpg', alt: 'FA LifeMakeOver' },
+    { id: 3, image: '/assets/images/work3.jpg', alt: 'FA GACHIAKUTA' },
+    { id: 4, image: '/assets/images/work4.jpg', alt: 'FA 終末のワルキューレ RecordofRagnarok' },
+    { id: 5, image: '/assets/images/work5.jpg', alt: 'FA enjin GACHIAKUTA ガチアクタ' },
     { id: 6, image: '/assets/images/work6.jpg', alt: '東卍FA' },
-    { id: 7, image: '/assets/images/work7.jpg', alt: '東卍FA 鬼滅の刃 DemonSlayer' },
+    { id: 7, image: '/assets/images/work7.jpg', alt: 'FA 鬼滅の刃 DemonSlayer' },
     { id: 8, image: '/assets/images/work8.jpg', alt: '東卍FA' },
-    { id: 9, image: '/assets/images/work9.jpg', alt: '東卍FA GenshinImpact venti genshinimpactfanart' },
+    { id: 9, image: '/assets/images/work9.jpg', alt: 'FA GenshinImpact venti genshinimpactfanart' },
     { id: 10, image: '/assets/images/work10.jpg', alt: '東卍FA' },
     { id: 11, image: '/assets/images/work11.jpg', alt: '東卍FA' },
     { id: 12, image: '/assets/images/work12.jpg', alt: '東卍FA' },
@@ -106,5 +106,6 @@ function Portfolio() {
     </div>
   );
 }
+
 
 export default Portfolio;
